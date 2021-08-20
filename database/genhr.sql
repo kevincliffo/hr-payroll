@@ -833,10 +833,10 @@ CREATE TABLE `social_media` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `to-do_list`
+-- Table structure for table `to_do_list`
 --
 
-CREATE TABLE `to-do_list` (
+CREATE TABLE `to_do_list` (
   `id` int(14) NOT NULL,
   `user_id` varchar(64) DEFAULT NULL,
   `to_dodata` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1083,9 +1083,9 @@ ALTER TABLE `social_media`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `to-do_list`
+-- Indexes for table `to_do_list`
 --
-ALTER TABLE `to-do_list`
+ALTER TABLE `to_do_list`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1327,9 +1327,9 @@ ALTER TABLE `social_media`
   MODIFY `id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `to-do_list`
+-- AUTO_INCREMENT for table `to_do_list`
 --
-ALTER TABLE `to-do_list`
+ALTER TABLE `to_do_list`
   MODIFY `id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
