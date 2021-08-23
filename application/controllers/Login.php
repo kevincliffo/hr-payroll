@@ -29,10 +29,15 @@ class Login extends CI_Controller {
 	{
 		#Redirect to Admin dashboard after authentication
         if ($this->session->userdata('user_login_access') == 1)
-            redirect('Dashboard');
+        {
+            redirect('dashboard');
+        }
+        else
+        {
             $data=array();
-            #$data['settingsvalue'] = $this->dashboard_model->GetSettingsValue();
+            //$data['settingsvalue'] = $this->dashboard_model->GetSettingsValue();
 			$this->load->view('login');
+        }
 	}
 
 	public function Login_Auth(){
@@ -69,8 +74,11 @@ class Login extends CI_Controller {
                     if(isset($_COOKIE['password']))
                     {
                         setcookie('password',' ');
-                    }        		
-                    redirect(base_url() . 'login', 'refresh');
+                    }
+                    
+                    //print('login base_url : '. base_url());die();
+                    //redirect(base_url() . 'login', 'refresh');
+                    redirect('login', 'refresh');
                 }
             
             }

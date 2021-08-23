@@ -5,7 +5,7 @@ class Dashboard extends CI_Controller {
 
 	    function __construct() {
         parent::__construct();
-        date_default_timezone_set('Asia/Dhaka');
+        date_default_timezone_set('Africa/Nairobi');
         $this->load->database();
         $this->load->model('login_model');
         $this->load->model('dashboard_model'); 
@@ -20,18 +20,23 @@ class Dashboard extends CI_Controller {
 	{
 		#Redirect to Admin dashboard after authentication
         if ($this->session->userdata('user_login_access') == 1)
-            redirect('dashboard/Dashboard');
+        {
+            $this->home();
+        }
+        else
+        {
             $data=array();
             #$data['settingsvalue'] = $this->dashboard_model->GetSettingsValue();
 			$this->load->view('login');
-	}
-    function Dashboard(){
-        if($this->session->userdata('user_login_access') != False) {
-        $this->load->view('backend/dashboard');
         }
-    else{
-		redirect(base_url() , 'refresh');
-	}            
+	}
+    function home(){
+        if($this->session->userdata('user_login_access') != False) {
+            $this->load->view('backend/dashboard');
+        }
+        else{
+		    redirect(base_url() , 'refresh');
+	    }            
     }
     public function add_todo(){
         $userid = $this->input->post('userid');

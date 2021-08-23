@@ -111,6 +111,7 @@ date_default_timezone_set('Asia/Dhaka');
                                             <div class="u-text">
                                                 <h4><?php echo $basicinfo->first_name.' '.$basicinfo->last_name; ?></h4>
                                                 <p class="text-muted"><?php echo $basicinfo->em_email ?></p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>

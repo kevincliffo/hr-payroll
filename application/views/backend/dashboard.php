@@ -27,12 +27,15 @@
                                     <div class="round align-self-center round-success"><i class="ti-wallet"></i></div>
                                     <div class="m-l-10 align-self-center">
                                         <h3 class="m-b-0">
-                                    <?php 
-                                        $this->db->where('status','ACTIVE');
-                                        $this->db->from("employee");
-                                        echo $this->db->count_all_results();
-                                    ?>  Employees</h3>
-                                        <a href="<?php echo base_url(); ?>employee/Employees" class="text-muted m-b-0">View Employee</a></div>
+                                            <?php 
+                                                $this->db->where('status','ACTIVE');
+                                                $this->db->from("employee");
+                                                echo $this->db->count_all_results();
+                                            ?>  
+                                            Employees
+                                        </h3>
+                                        <a href="<?php echo base_url(); ?>employee/Employees" class="text-muted m-b-0">View Employee</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
