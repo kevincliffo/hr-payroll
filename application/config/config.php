@@ -40,7 +40,7 @@ else
 {
     $config['base_url'] = 'https://hr-payroll-sys.herokuapp.com/';
 }
-
+date_default_timezone_set('Africa/Nairobi');
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -503,7 +503,7 @@ $config['compress_output'] = FALSE;
 | helper' page of the user guide for information regarding date handling.
 |
 */
-$config['time_reference'] = 'local';
+$config['time_reference'] = 'Africa/Nairobi';
 
 /*
 |--------------------------------------------------------------------------

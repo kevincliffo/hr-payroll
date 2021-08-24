@@ -19,6 +19,7 @@
     <script src="<?php echo base_url(); ?>assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="<?php echo base_url(); ?>assets/js/custom.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/clocking.js"></script>
 
     <!-- ============================================================== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>

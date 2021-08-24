@@ -24,6 +24,60 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-row">
+                                    <div class="round align-self-center round-danger"><i class="ti-time"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <input type="hidden" name="base_url" id="base_url" value="<?php echo base_url();?>">
+                                        <?php
+                                            $emp_id = $this->session->userdata('user_login_id');
+                                            $clockedIn = $this->clocking_model->userHasClockedIn($emp_id);
+                                            if($clockedIn)
+                                            {
+                                                echo '<button type="submit" style="background-color:transparent" class="btn m-b-0 font-bold disable-link">CLOCK IN</button>';
+                                            }
+                                            else
+                                            {
+                                                echo '<button type="submit" onClick="clockIn();" style="background-color:transparent" class="btn m-b-0 font-bold">CLOCK IN</button>';
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round align-self-center round-success"><i class="ti-time"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <?php
+                                            $emp_id = $this->session->userdata('user_login_id');
+                                            $clockedIn = $this->clocking_model->userHasClockedOut($emp_id);
+                                            if($clockedIn)
+                                            {
+                                                echo '<button type="submit" style="background-color:transparent" class="btn m-b-0 font-bold disable-link">CLOCK OUT</button>';
+                                            }
+                                            else
+                                            {
+                                                echo '<button type="submit" onClick="clockOut();" style="background-color:transparent" class="btn m-b-0 font-bold">CLOCK OUT</button>';
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->                    
+                </div>
+                <!-- Row -->
+                <div class="row">                    
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
                                     <div class="round align-self-center round-success"><i class="ti-wallet"></i></div>
                                     <div class="m-l-10 align-self-center">
                                         <h3 class="m-b-0">
@@ -129,11 +183,11 @@
                         <div class="card card-success card-inverse">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">
-                                             <?php 
-                                                    $this->db->where('leave_status','Approve');
-                                                    $this->db->from("emp_leave");
-                                                    echo $this->db->count_all_results();
-                                                ?> 
+                                    <?php 
+                                        $this->db->where('leave_status','Approve');
+                                        $this->db->from("emp_leave");
+                                        echo $this->db->count_all_results();
+                                    ?> 
                                 </h1>
                                 <h6 class="text-white">Leave Application</h6>
                             </div>
@@ -144,11 +198,11 @@
                         <div class="card card-inverse card-danger">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">
-                                     <?php 
-                                            $this->db->where('pro_status','upcoming');
-                                            $this->db->from("project");
-                                            echo $this->db->count_all_results();
-                                        ?> 
+                                    <?php 
+                                        $this->db->where('pro_status','upcoming');
+                                        $this->db->from("project");
+                                        echo $this->db->count_all_results();
+                                    ?> 
                                 </h1>
                                 <h6 class="text-white">Upcomming Project</h6>
                             </div>
@@ -169,7 +223,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
+                    <!-- Column -->                  
                 </div>
                 <!-- ============================================================== -->
             </div> 
