@@ -69,6 +69,23 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round align-self-center round-success"><i class="ti-time"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <h3 class="m-b-0"> 
+                                            Clockings Table
+                                        </h3>
+                                        <a href="<?php echo base_url(); ?>clocking/clockings" class="text-muted m-b-0">View Clockings</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Column -->                    
                 </div>
                 <!-- Row -->
@@ -110,7 +127,7 @@
                                                 ?> Leaves
                                         </h3>
                                         <a href="<?php echo base_url(); ?>leave/Application" class="text-muted m-b-0">View Leave</a>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

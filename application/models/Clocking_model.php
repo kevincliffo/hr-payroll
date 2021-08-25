@@ -68,5 +68,29 @@
             $query = $this->db->query($sql);
             return $query;     
         }
+
+        public function getAllClockings()
+        {
+            // $this->db->query("SET sql_mode = '' ");
+            // $this->db->select('*'); 
+            // $this->db->order_by('clockingId', 'ASC');
+            // $query = $this->db->get('clocking');
+            
+            // if ($query->num_rows() > 0)
+            // {
+            //     return $query->result_array();
+            // } else {
+            //     return array();
+            // }
+
+            $sql = "SELECT clockingId, emp_id, clock_in_date, clock_in_time,clock_out_time, duration_hours,
+                    CONCAT(first_name, ' ', last_name) AS name
+                    FROM clocking
+            inner JOIN employee ON clocking.emp_id = employee.em_id";
+
+            $query  = $this->db->query($sql);
+            $result = $query->result();
+            return $result;            
+        }        
     }
 ?>

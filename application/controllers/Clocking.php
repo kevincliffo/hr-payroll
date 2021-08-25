@@ -8,11 +8,11 @@ class Clocking extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->model('clocking_model');
-        #$this->load->model('dashboard_model'); 
-        //$this->load->model('employee_model'); 
-        // $this->load->model('notice_model');
-        // $this->load->model('settings_model');
-        // $this->load->model('leave_model');
+        $this->load->model('dashboard_model'); 
+        $this->load->model('employee_model'); 
+        $this->load->model('notice_model');
+        $this->load->model('settings_model');
+        $this->load->model('leave_model');
     }
     
 	public function index()
@@ -27,6 +27,14 @@ class Clocking extends CI_Controller {
 			$this->load->view('login');
         }
 	}
+
+    public function clockings()
+    {
+        $data['clockinglist'] = $this->clocking_model->getAllClockings();
+        //print_r($data['clockinglist']);die();
+        $this->load->view('backend/clocking', $data);
+    }
+
     public function All_notice(){
         if($this->session->userdata('user_login_access') != False) {
         $data['notice'] = $this->notice_model->GetNotice();

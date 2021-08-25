@@ -7,7 +7,7 @@ function clockIn(){
         //data: {folderPath : $folderPath},
         dataType: 'json',
         success:function(response) {
-            console.log("Hello")
+            //console.log("Hello")
             location.reload();
         }
     });
@@ -22,7 +22,7 @@ function clockOut(){
         //data: {folderPath : $folderPath},
         dataType: 'json',
         success:function(response) {
-            console.log("Hello")
+            //console.log("Hello")
             location.reload();
         }
     });

@@ -18,6 +18,19 @@ class Attendance extends CI_Controller
         $this->load->library('csvimport');
     }
     
+    public function Clocking()
+    {
+        if ($this->session->userdata('user_login_access') != False) {
+            #$data['employee'] = $this->employee_model->emselect();
+            $data['attendancelist'] = $this->attendance_model->getAllAttendance();
+            $this->load->view('backend/clocking', $data);
+        } 
+        else 
+        {
+            redirect(base_url(), 'refresh');
+        }
+    }
+
     public function Attendance()
     {
         if ($this->session->userdata('user_login_access') != False) {
